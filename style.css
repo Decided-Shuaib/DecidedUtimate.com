@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: #081229;
     color: #ffffff;
 }
 
@@ -25,12 +25,13 @@ nav {
     width: 100%;
     justify-content: space-between;
     padding: 20px 8%;
-    background-color:hsla(222, 68%, 16%, 0.95);
+    background: hsla(222, 67%, 10%, 0.5);
     
 }
 
 
 .logo {
+    width: 10%;
     font-size: 50px;
     float: left;
     font-weight: bold;
@@ -45,6 +46,7 @@ nav {
 .nav-links a {
     color: #cfd8dc;
     font-size: 25px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
@@ -62,6 +64,7 @@ nav {
     justify-content: space-between;
     min-height: calc(100vh - 80px);
     background-color: #081229;
+    overflow: hidden;
 }
 .heros {
     display: flex;
@@ -111,7 +114,7 @@ nav {
     font-weight: bold;
     display: inline-block;
     margin-top: 10px;
-    transition: 0.3s;
+    transition: 0.3s linear;
 }
 
 .primary-btn:hover {
@@ -123,7 +126,6 @@ nav {
     margin-top: 20px;
     display: flex;
     gap: 15px;
-    visibility: hidden;
 }
 
 .socials span {
@@ -131,6 +133,12 @@ nav {
     cursor: pointer;
     color: #b0bec5;
     transition: 0.3s;
+}
+.socials span ion-icon{
+    height: 50px;
+    width: 50px;
+    color: white;
+    border-radius: 50%;
 }
 
 .socials span:hover {
@@ -145,8 +153,8 @@ nav {
 }
 
 .image-circle {
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     background: radial-gradient(circle, #00c6ff20, transparent);
     display: flex;
@@ -195,6 +203,7 @@ nav {
     margin: 0px auto;
     min-height: 200px;
     text-align: center;
+    overflow: hidden;
     padding: 20px;
     gap: 50px;
     background-color: #091636;
@@ -204,10 +213,17 @@ nav {
     min-height: 200px;
     width: 90%;
     color: black;
-    margin: 30px auto;
+    margin: 20px auto;
     border-radius: 30px;
-    box-shadow: 3px 3px 10px black;
+    transition: .2s linear;
     background-color: #00c6ff;
+}
+
+.box:hover {
+    background-color: #06C3F9;
+    transform: scale(1.05, 1.5
+    );
+    margin: 100px auto;
 }
 
 .box .box-header {
@@ -223,10 +239,11 @@ nav {
     margin: 50px auto;
 }
 
-.container-skills details summary {
-    font-size: 35px;
+.container-skills progress{
+    height: 50px;
+    width: 300px;
+    margin: 10px;
 }
-
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 600px) {
     .hero {
@@ -254,8 +271,8 @@ nav {
     }
 
     .image-circle {
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 230px;
     }
 
     .image-circle img {
@@ -274,7 +291,15 @@ nav {
         width: 100px;
         visibility: hidden;
     }
-
+    .socials {
+        margin: 20px auto;
+        width: 100px;
+    }
+    .socials span ion-icon {
+        height: 30px;
+        width: 30px;
+        color: white;
+    }
     nav {
         flex-direction: column;
     }
@@ -292,22 +317,43 @@ nav {
     }
     .container-skills .box {
         min-height: 80px;
+        margin: 8px auto;
+        border-radius: 10px;
     }
+    .box:hover {
+        margin: 30px auto;
+    }
+
     .box .box-header {
         font-size: 20px;
         font-weight: 700;
+    }
+    .box progress {
+        width: 150px;
+        height: 20px;
     }
     
     .box p {
         font-size: 15px;
     }
-    .container-skills details summary {
-        font-size: 15px ;
+    .container-skills h2 {
+        font-size: 25px;
     }
 }
 
 .con-info {
-    height: 300px;
+    height: 70vh;
+    text-align: center;
+    line-height: 300%;
     background-color: #081229;
-    margin-bottom: 500rem;
+}
+
+.con-info .contacts .card{
+    align-items: center;
+    padding: 30% 10px;
+}
+
+
+.contacts .card a:hover {
+    color: #00c6ff;
 }
