@@ -9,30 +9,31 @@
 body {
     background-color: #081229;
     color: #ffffff;
+    font-size: 100%;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
-
 /* ===== NAVBAR ===== */
 nav {
     display: flex;
     position: fixed;
     top: 0;
-    height: 80px;
+    height: auto;
     width: 100%;
     justify-content: space-between;
     padding: 20px 8%;
-    background: hsla(222, 67%, 10%, 0.5);
+    align-items: center;
+    background: #081229DB;
+    z-index: 99999;
     
 }
 
 
 .logo {
-    width: 10%;
-    font-size: 50px;
+    font-size: 1.5rem;
     float: left;
     font-weight: bold;
     color: #00c6ff;
@@ -45,7 +46,7 @@ nav {
 
 .nav-links a {
     color: #cfd8dc;
-    font-size: 25px;
+    font-size: 0.65rem;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -58,39 +59,45 @@ nav {
 
 
 .hero {
-    text-align: left;
-    margin-top: 80px;
+    margin-top: calc(5vw + 2rem);
     align-items: center;
-    justify-content: space-between;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 40px);
     background-color: #081229;
     overflow: hidden;
 }
-.heros {
+.hero .heros {
     display: flex;
-    padding-top: 20%;
-    gap: 30px;
+    flex-direction: column;
+    height: auto;
+    margin: 20% 1em;
     justify-content: space-between;
+    padding: 0.5em;
+    align-items: center;
 }
 .hero-left {
-    font-size: 20px;
-    max-width: 500px;
+    height: auto;
+    width: 80vw;
+    margin: 1rem auto;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1em 1em;
+    box-sizing: border-box;
 }
 
 .badge {
     display: inline-block;
     background: rgba(0, 198, 255, 0.15);
     color: #00c6ff;
-    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 2em;
 }
 
 .hero .hero-left h1 {
-    font-size: 60px;
+    font-size:  1.85rem;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
 }
 
 .highlight {
@@ -99,82 +106,90 @@ nav {
 }
 
 .hero p {
-    color: #b0bec5;
-    margin: 20px 0;
-    font-size: 20px;
-    line-height: 1.6;
+    color: white;
+    font-size: 0.4rem;
+    line-height: 1.5;
 }
 
 .primary-btn {
+    font-size: 1.25rem;
     background: #00c6ff;
-    padding: 12px 20px;
-    align-self: center;
-    border-radius: 8px;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
     color: #081229;
     font-weight: bold;
     display: inline-block;
-    margin-top: 10px;
+    margin: 1rem 0;
     transition: 0.3s linear;
 }
 
 .primary-btn:hover {
     opacity: 0.8;
+    transform: translateY(-.5vw);
 }
 
 /* ===== SOCIAL ICONS ===== */
 .socials {
-    margin-top: 20px;
+    margin: 1rem auto;
     display: flex;
     gap: 15px;
+    width: 40vw;
+    height: auto;
+    justify-content: center;
 }
 
 .socials span {
-    font-size: 18px;
+    font-size: 1.5rem;
     cursor: pointer;
     color: #b0bec5;
-    transition: 0.3s;
+    transition: 0.2s ease;
 }
 .socials span ion-icon{
-    height: 50px;
-    width: 50px;
     color: white;
     border-radius: 50%;
 }
 
 .socials span:hover {
     color: #00c6ff;
+    transform: translateY(-3px);
+
 }
 
 /* ===== HERO IMAGE ===== */
 .hero-right {
-    display: flex;
+    height: auto;
     justify-content: center;
     align-items: center;
 }
 
-.image-circle {
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
+.hero-right .image-circle {
+    width: 15rem;
+    height: 15rem;
     background: radial-gradient(circle, #00c6ff20, transparent);
-    display: flex;
+    position: relative;
+    border-radius: 50%;
+    margin: auto ;
+    display: flex; 
     justify-content: center;
     align-items: center;
 }
 
-.image-circle img {
-    width: 350px;
-    height: 350px;
+.hero-right .image-circle img {
+    width: 100%;
+    margin: auto;
     border-radius: 50%;
 }
 #tag-left {
+    position: absolute;
+    top: 20em;
     border-radius: 50%;
-    opacity: 0.08;
+    opacity: 1;
 }
 #tag-right {
     border-radius: 50%;
-    opacity: 0.08;
-    float: right;
+    position: absolute;
+    opacity: 1;
+    right: 5em;
 }
 
 /* ===== SCROLL TEXT ===== */
@@ -182,7 +197,7 @@ nav {
     text-align: center;
     align-items: center;
     color: white;
-    font-size: 30px;
+    font-size: 0.75rem;
     animation: scroller 5s linear infinite;
 }
 
@@ -200,160 +215,244 @@ nav {
 
 .container-skills {
     width: 100%;
-    margin: 0px auto;
-    min-height: 200px;
+    margin: auto;
+    min-height: 50vh;
     text-align: center;
     overflow: hidden;
-    padding: 20px;
     gap: 50px;
     background-color: #091636;
 }
 
 .container-skills .box {
-    min-height: 200px;
-    width: 90%;
+    height: 5rem;
+    width: 80vw;
     color: black;
-    margin: 20px auto;
-    border-radius: 30px;
-    transition: .2s linear;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: .2s ease;
     background-color: #00c6ff;
 }
 
-.box:hover {
+.container-skills .box:hover {
     background-color: #06C3F9;
-    transform: scale(1.05, 1.5
-    );
-    margin: 100px auto;
+    transform: scale(1.05, 1.2
+    ) translateY(-5px);
+    margin: 1.5rem auto;
 }
 
 .box .box-header {
-    font-size: 50px;
+    font-size: 1rem;
     font-weight: 900;
-}
-.box p {
-    font-size: 30px;
 }
 
 .container-skills h2{
-    font-size: 50px;
-    margin: 50px auto;
+    font-size: 1.5rem;
+    margin: 2rem auto;
 }
 
 .container-skills progress{
-    height: 50px;
-    width: 300px;
-    margin: 10px;
+    height: 2rem;
+    width: 10rem;
+    margin: 0.5rem;
 }
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 600px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        min-height: calc(100vh - 80px);
-    }
-    .heros {
-        flex-direction: column;
-        padding: 1%;
-    }
-    .badge{
-        font-size: 10px;
-    }
 
-    .hero .hero-left h1 {
-        font-size: 30px;
-    }
-    .hero p{
-        font-size: 10px;
-    }
-    .hero .scroll-down {
-        font-size: 10px;
-        padding-bottom: 20px;
-    }
-
-    .image-circle {
-        width: 230px;
-        height: 230px;
-    }
-
-    .image-circle img {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-    }
-    #tag-left {
-        margin-top: 0px;
-        height: 100px;
-        width: 100px;
-        visibility: hidden;
-    }
-    #tag-right {
-        height: 100px;
-        width: 100px;
-        visibility: hidden;
-    }
-    .socials {
-        margin: 20px auto;
-        width: 100px;
-    }
-    .socials span ion-icon {
-        height: 30px;
-        width: 30px;
-        color: white;
-    }
-    nav {
-        flex-direction: column;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-       justify-content: right;
-    }
-    .nav-links a {
-        font-size: 14px;
-    }
-    .logo {
-        font-size: 30px;
-        font-weight: 900;
-    }
-    .container-skills .box {
-        min-height: 80px;
-        margin: 8px auto;
-        border-radius: 10px;
-    }
-    .box:hover {
-        margin: 30px auto;
-    }
-
-    .box .box-header {
-        font-size: 20px;
-        font-weight: 700;
-    }
-    .box progress {
-        width: 150px;
-        height: 20px;
-    }
-    
-    .box p {
-        font-size: 15px;
-    }
-    .container-skills h2 {
-        font-size: 25px;
-    }
-}
+/* ==== CONTACT SECTION ==== */
 
 .con-info {
-    height: 70vh;
+    min-height: 70vh;
     text-align: center;
-    line-height: 300%;
     background-color: #081229;
+    
+    & h2 {
+        font-size: 1.5rem;
+        margin: 2rem auto;
+    }
 }
 
+
 .con-info .contacts .card{
-    align-items: center;
-    padding: 30% 10px;
+    margin-bottom: 10rem;
+    
+    & p{
+        line-height: 300%;
+    }
 }
 
 
 .contacts .card a:hover {
     color: #00c6ff;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media only screen and (min-width: 600px) {
+    .nav-links a{
+        font-size: 1rem;
+    }
+    nav .logo {
+        font-size: 2.5rem;
+    }
+    
+    .hero .heros .hero-right .image-circle {
+        width: 30rem;
+        height: auto;
+    }
+    
+    .heros .hero-left{
+        & .badge {
+            font-size: 1.5rem;
+        }
+        & h1 {
+            font-size: 4.5rem;
+        }
+        & p {
+            font-size: 1.2rem;
+        }
+        & .primary-btn {
+            font-size: 3rem;
+            padding: 2rem 2.5rem;
+            border-radius: 1rem;
+            margin: 3rem 0;
+        }
+        .socials {
+            gap: 3rem;
+            & span {
+            font-size: 3rem;
+        }
+        }
+    }
+    .hero .scroll-down {
+        font-size: 1.5rem;
+    }
+    .container-skills .box {
+        height: 10rem;
+        width: 80vw;
+        margin: 1rem auto;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        
+        & .box-header {
+            font-size: 2.5rem;
+        }
+        & progress {
+            width: 20rem;
+            height: 3rem;
+        }
+    
+    }
+    .container-skills h2{
+        font-size: 3rem;
+        margin: 5rem auto;
+    }
+    
+    .con-info {
+        & h2 {
+            font-size: 3rem;
+            margin-top: 5rem;
+        }
+        & .contacts .card p{
+            font-size: 2rem ;
+            margin: 3rem ;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 992px) {
+    .nav-links{
+        gap: 10rem;
+        & a{
+        font-size: 3rem;
+        }
+    }
+    nav .logo {
+        font-size: 5rem;
+    }
+    .hero .heros {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero .heros .hero-right{
+        width: 46vw;
+        height: auto;
+        
+     & .image-circle {
+        width: 80rem;
+        height: auto;
+     }
+    }
+    
+    .heros .hero-left{
+        width: 46vw;
+        & .badge {
+            font-size: 3.5rem;
+        }
+        & h1 {
+            font-size: 10rem;
+        }
+        & p {
+            font-size: 2.5rem;
+        }
+        & .primary-btn {
+            font-size: 8rem;
+            padding: 5rem 3rem;
+            border-radius: 3rem;
+            margin: 10rem 0;
+        }
+        & .socials {
+            gap: 5rem;
+            & span{
+            font-size: 10rem;
+            }
+        }
+    }
+    .hero .scroll-down {
+        font-size: 5rem;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1rem auto;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        row-gap: 10rem;
+        & .box{
+            width: 40vw;
+            height: auto;
+    
+        }
+        & .box .box-header {
+            font-size: 8rem;
+        }
+        & .box progress {
+            width: 50rem;
+            height: 8rem;
+        }
+    
+    }
+    .container-skills h2{
+        font-size: 10rem;
+        margin: 15rem auto;
+    }
+    
+    .con-info {
+        & .card {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            
+        }
+        & h2 {
+            font-size: 10rem;
+            margin: 15rem 0;
+        }
+        & .contacts .card p{
+            font-size: 5rem ;
+            margin: 15rem ;
+            line-height: 100%;
+            
+        }
+    }
+    
 }
